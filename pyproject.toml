@@ -45,8 +45,6 @@ dependencies = [
     "tqdm>=4.66.0",
     "rich>=13.0.0",
     "click>=8.1.0",
-    "torch>=2.7.1",
-    "torchvision>=0.22.1",
 ]
 
 [project.optional-dependencies]

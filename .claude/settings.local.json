@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(find:*)",
+      "Bash(uv init:*)",
+      "Bash(uv add:*)",
+      "Bash(uv run:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(cp:*)",
+      "Bash(rg:*)",
+      "Bash(chmod:*)",
+      "Bash(uv run:*)",
+      "Bash(awk:*)",
+      "Bash(git branch:*)",
+      "Bash(git worktree:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git checkout:*)",
+      "Bash(code:*)",
+      "Bash(cmd.exe /c \"start wsl.exe -d Ubuntu-24.04 --cd /mnt/c/Users/mao0202/Desktop/Godot/projects/nyugyu-clicker\")",
+      "Bash(git merge:*)",
+      "Bash(rm:*)",
+      "Bash(tmux send-keys:*)",
+      "Bash(tmux split-window:*)",
+      "Bash(tmux resize-pane:*)",
+      "Bash(tmux new-session:*)"
+    ],
+    "deny": [],
+    "preferredNotifChannel": "terminal_bell"
+  }
+}

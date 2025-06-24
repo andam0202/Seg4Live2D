@@ -5,11 +5,11 @@ debug: true
 
 # 開発環境固有の設定
 model:
-  name: "yolo11n-seg.pt"      # 軽量モデルで高速開発
+  name: "yolo11l-seg.pt"      # より高精度なLargeモデル
   device: "auto"
-  confidence: 0.20            # 開発時は低めの閾値でテスト
-  iou_threshold: 0.6
-  max_det: 100               # 開発時は少なめ
+  confidence: 0.15            # より低い閾値で細かい検出
+  iou_threshold: 0.5          # より厳密な重複除去
+  max_det: 300               # より多くの検出を許可
   half: false
 
 processing:

@@ -1,0 +1,65 @@
+# Seg4Live2D 開発環境設定
+version: "0.1.0"
+environment: "development"
+debug: true
+
+# 開発環境固有の設定
+model:
+  name: "yolo11n-seg.pt"      # 軽量モデルで高速開発
+  device: "auto"
+  confidence: 0.20            # 開発時は低めの閾値でテスト
+  iou_threshold: 0.6
+  max_det: 100               # 開発時は少なめ
+  half: false
+
+processing:
+  input_size: 640
+  batch_size: 1              # 開発時は安全にバッチサイズ1
+  num_workers: 2             # 開発時は少なめ
+  pin_memory: false          # 開発時はメモリ使用量を抑制
+  prefetch_factor: 1
+
+live2d:
+  output_format: "png"       # 開発時はPNGで高速
+  layer_separation: true
+  transparency_processing: true
+  mesh_generation: false     # Phase Aでは無効
+  max_layers: 20            # 開発時は少なめ
+
+ui:
+  host: "localhost"
+  port: 8501
+  debug: true               # 開発時はUIデバッグ有効
+  max_file_size: 20971520   # 開発時は20MB制限
+  allowed_extensions:
+    - ".png"
+    - ".jpg"
+    - ".jpeg"
+
+# 開発時のログ設定（詳細ログ）
+logging:
+  level: "DEBUG"            # 開発時は詳細ログ
+  structured: true
+  console_output: true
+  file_output: true
+  max_file_size: 5242880    # 開発時は5MB
+  backup_count: 3
+
+# 開発時のパフォーマンス設定
+performance:
+  enable_profiling: true    # 開発時はプロファイリング有効
+  memory_monitoring: true
+  gpu_monitoring: true
+
+# 開発時のセキュリティ設定（緩め）
+security:
+  max_concurrent_requests: 5   # 開発時は少なめ
+  rate_limit_per_minute: 30
+  file_scan_enabled: false     # 開発時は無効化
+
+# 開発専用設定
+development:
+  auto_reload: true            # ファイル変更時の自動リロード
+  mock_mode: false            # モックモード（テスト用）
+  sample_data_path: "data/samples/demo_images"  # サンプルデータパス
+  enable_test_endpoints: true  # テスト用エンドポイント有効化

@@ -29,7 +29,11 @@
       "Bash(tmux send-keys:*)",
       "Bash(tmux split-window:*)",
       "Bash(tmux resize-pane:*)",
-      "Bash(tmux new-session:*)"
+      "Bash(tmux new-session:*)",
+      "Bash(mkdir:*)",
+      "Bash(uv run:*)",
+      "Bash(rm:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "preferredNotifChannel": "terminal_bell"

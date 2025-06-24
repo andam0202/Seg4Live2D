@@ -1,0 +1,63 @@
+# Seg4Live2D デフォルト設定
+version: "0.1.0"
+environment: "development"
+debug: true
+
+# モデル設定
+model:
+  name: "yolo11n-seg.pt"      # 使用するYOLOモデル
+  device: "auto"              # auto, cpu, cuda, mps
+  confidence: 0.25            # 信頼度閾値
+  iou_threshold: 0.7          # IoU閾値
+  max_det: 300               # 最大検出数
+  half: false                # FP16推論（GPU使用時の高速化）
+
+# 画像処理設定
+processing:
+  input_size: 640            # 入力画像サイズ（正方形）
+  batch_size: 1              # バッチサイズ
+  num_workers: 4             # データローダーのワーカー数
+  pin_memory: true           # GPU使用時のメモリピン留め
+  prefetch_factor: 2         # プリフェッチファクター
+
+# Live2D出力設定
+live2d:
+  output_format: "png"       # 出力形式: png, psd
+  layer_separation: true     # レイヤー分離
+  transparency_processing: true  # 透明度処理
+  mesh_generation: false     # メッシュ生成（Phase Cで実装予定）
+  max_layers: 50            # 最大レイヤー数
+
+# UI設定
+ui:
+  host: "localhost"          # サーバーホスト
+  port: 8501                # サーバーポート
+  debug: false              # UIデバッグモード
+  max_file_size: 52428800   # 最大ファイルサイズ（50MB）
+  allowed_extensions:       # 許可される拡張子
+    - ".png"
+    - ".jpg"
+    - ".jpeg"
+    - ".webp"
+    - ".tiff"
+
+# ログ設定
+logging:
+  level: "INFO"             # ログレベル
+  structured: true          # 構造化ログ
+  console_output: true      # コンソール出力
+  file_output: true         # ファイル出力
+  max_file_size: 10485760   # ログファイル最大サイズ（10MB）
+  backup_count: 5           # バックアップファイル数
+
+# パフォーマンス設定
+performance:
+  enable_profiling: false   # プロファイリング有効化
+  memory_monitoring: true   # メモリ監視
+  gpu_monitoring: true      # GPU監視（CUDA使用時）
+
+# セキュリティ設定
+security:
+  max_concurrent_requests: 10  # 最大同時リクエスト数
+  rate_limit_per_minute: 60    # 1分あたりのレート制限
+  file_scan_enabled: true      # ファイルスキャン有効化

@@ -24,14 +24,20 @@ classifiers = [
 ]
 
 dependencies = [
-    "ultralytics>=8.3.0", # YOLOv11 support
+    # SAM2 core (GitHub直接インストール用、pip installで別途インストール)
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    # Legacy YOLO (maintaining compatibility)
+    "ultralytics>=8.3.0",
     # Image processing
     "opencv-python>=4.8.0",
     "pillow>=10.0.0",
     "scikit-image>=0.21.0",
     "numpy>=1.24.0",
+    "scipy>=1.11.0",
     # Web UI
     "streamlit>=1.28.0",
+    "streamlit-drawable-canvas>=0.9.0",
     "gradio>=4.0.0",
     # API (optional)
     "fastapi>=0.104.0",
